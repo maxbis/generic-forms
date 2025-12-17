@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .editor-container {
+            max-width: 1200px;
+        }
+        
+        .editor-toolbar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .editor-toolbar input[type="text"] {
+            flex: 1;
+            max-width: 300px;
+        }
+        
+        .chapter-editor {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .chapter-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .chapter-header input {
+            flex: 1;
+            margin-right: 1rem;
+        }
+        
+        .field-editor {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: var(--surface);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .field-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .field-properties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .property-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .property-group label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .property-group input,
+        .property-group select {
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+        }
+        
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .dependent-field-editor {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fafafa;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .btn-danger {
+            background: var(--error-color);
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #dc2626;
+        }
+        
+        .btn-small {
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .preview-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--background);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+        }
+        
+        .code-preview {
+            background: var(--surface);
+            padding: 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            font-family: 'Monaco', 'Menlo', 'Courier New', monospace;
+            font-size: 0.875rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container editor-container">
+        <header>
+            <h1>Form Data Editor</h1>
+            <p class="subtitle">Create or edit form data files</p>
+        </header>
+        
+        <div class="editor-toolbar">
+            <input type="text" id="form-title" placeholder="Form Title" value="Dynamic Form">
+            <input type="text" id="filename-input" placeholder="Filename (without .js)" value="form-data">
+            <button onclick="loadFormData()" class="btn btn-secondary btn-small">Load</button>
+            <button onclick="saveFormData()" class="btn btn-primary btn-small">Save</button>
+            <button onclick="previewForm()" class="btn btn-primary btn-small">Preview Form</button>
+            <button onclick="addChapter()" class="btn btn-primary btn-small">+ Chapter</button>
+        </div>
+        
+        <div id="chapters-container"></div>
+        
+        <div class="preview-section">
+            <h2 style="color: var(--primary-color); margin-bottom: 1rem;">Preview</h2>
+            <div class="code-preview" id="code-preview"></div>
+        </div>
+    </div>
+    
+    <script src="editor.js"></script>
+</body>
+</html>
+

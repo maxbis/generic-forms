@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dynamic Form</h1>
+        </header>
+        
+        <form id="dynamic-form" novalidate>
+            <!-- Form will be generated here dynamically -->
+        </form>
+        
+        <div class="form-actions">
+            <button type="submit" form="dynamic-form" class="btn btn-primary">Overzicht genereren</button>
+        </div>
+        
+        <div id="form-output" class="output-container" style="display: none;">
+            <!-- Document will be generated here -->
+        </div>
+    </div>
+    
+    <script src="form-generator.js"></script>
+    <script>
+        // Get form parameter from URL
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Load form-data.js dynamically based on GET parameter or preview data
+        function loadFormData() {
+            // Check for preview data first
+            const isPreview = getUrlParameter('preview') === '1';
+            if (isPreview) {
+                try {
+                    const previewData = localStorage.getItem('formPreviewData');
+                    if (previewData) {
+                        // Create formData from preview
+                        window.formData = JSON.parse(previewData);
+                        const formElement = document.getElementById('dynamic-form');
+                        new FormGenerator(formData, formElement);
+                        // Clear preview data after use
+                        localStorage.removeItem('formPreviewData');
+                        return;
+                    }
+                } catch (error) {
+                    console.error('Error loading preview data:', error);
+                }
+            }
+            
+            // Normal file loading
+            const formParam = getUrlParameter('form') || getUrlParameter('data');
+            const formDataFile = formParam ? `form-data/${formParam}.js` : 'form-data/form-data.js';
+            
+            const script = document.createElement('script');
+            script.src = formDataFile;
+            script.onload = function() {
+                // Initialize form after script loads
+                if (typeof formData !== 'undefined') {
+                    const formElement = document.getElementById('dynamic-form');
+                    new FormGenerator(formData, formElement);
+                } else {
+                    console.error('formData is not defined after loading', formDataFile);
+                }
+            };
+            script.onerror = function() {
+                console.error('Failed to load form data file:', formDataFile);
+                alert(`Could not load form data file: ${formDataFile}`);
+            };
+            document.head.appendChild(script);
+        }
+
+        // Load form data when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', loadFormData);
+        } else {
+            loadFormData();
+        }
+    </script>
+</body>
+</html>
+
