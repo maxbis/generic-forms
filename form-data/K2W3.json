@@ -1,0 +1,101 @@
+{
+    "title": "Examenonderlegger - Kerntaak 2 Werkproces 3 (Reflecteren)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Reflectie-Proces",
+        "title": "Reflectie op resultaat en proces",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-eigen-punten",
+            "label": "Je benoemt zowel een specifiek eigen positief- als verbeterpunt (onderbouwd).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-eigen-punten",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-team-punten",
+            "label": "Je benoemt zowel een specifiek team positief- als verbeterpunt (onderbouwd).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-team-punten",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-verband-gedrag-resultaat",
+            "label": "Je legt een duidelijk verband tussen jouw gedrag, het resultaat en mogelijke verbeteringen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-verband-gedrag-resultaat",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Reactie-Feedback",
+        "title": "Reactie op feedback",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-feedback-vertaling",
+            "label": "Je benoemt specifiek ontvangen feedback en vertaalt dit naar concrete verbeteracties.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-feedback-vertaling",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-aanpassing-bewijs",
+            "label": "Er is bewijs dat je zichtbaar zaken hebt aangepast op basis van de feedback.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-aanpassing-bewijs",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-lerende-houding",
+            "label": "Je toont gedurende het gehele proces een open en lerende houding.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-lerende-houding",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }

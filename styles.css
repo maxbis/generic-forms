@@ -233,6 +233,52 @@ textarea::placeholder {
     border-color: var(--secondary-color);
 }
 
+/* Form list page */
+.form-list {
+    margin-top: 1.5rem;
+}
+
+.form-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form-list li + li {
+    margin-top: 0.75rem;
+}
+
+.form-list-link {
+    display: block;
+    padding: 0.9rem 1.1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border-color);
+    background: var(--background);
+    text-decoration: none;
+    color: var(--text-primary);
+    box-shadow: var(--shadow-sm);
+    transition: background 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.form-list-link:hover {
+    background: #eef6ff;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.form-list-title {
+    display: block;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.15rem;
+}
+
+.form-list-code {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
 .output-container {
     margin-top: 2rem;
     padding: 0;

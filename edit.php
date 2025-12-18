@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         exit;
     }
     
-    // Ensure filename ends with .js
-    if (!preg_match('/\.js$/', $filename)) {
-        $filename .= '.js';
+    // Ensure filename ends with .json
+    if (!preg_match('/\.json$/', $filename)) {
+        $filename .= '.json';
     }
     
     // Define the form-data directory
@@ -52,23 +52,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     exit;
 }
 
-// Handle file load
+// Handle file load (JSON)
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['load'])) {
     $filename = isset($_GET['load']) ? trim($_GET['load']) : '';
     
-    // Sanitize filename
-    $filename = preg_replace('/[^a-zA-Z0-9_-]/', '', $filename);
-    if (!empty($filename) && !preg_match('/\.js$/', $filename)) {
-        $filename .= '.js';
+    // Sanitize filename - allow alphanumeric, dash, underscore and dot
+    $filename = preg_replace('/[^a-zA-Z0-9_.-]/', '', $filename);
+
+    // Ensure filename ends with .json
+    if (!empty($filename) && !preg_match('/\.json$/', $filename)) {
+        $filename .= '.json';
     }
-    
-    $filepath = __DIR__ . '/form-data/' . $filename;
+
+    $formDataDir = __DIR__ . '/form-data';
+    $filepath = $formDataDir . '/' . $filename;
     
     // Prevent directory traversal
     $realPath = realpath($filepath);
-    $realDir = realpath(__DIR__ . '/form-data');
+    $realDir = realpath($formDataDir);
     if ($realPath && $realDir && strpos($realPath, $realDir) === 0 && file_exists($filepath)) {
-        header('Content-Type: application/javascript');
+        header('Content-Type: application/json; charset=utf-8');
         readfile($filepath);
         exit;
     } else {
@@ -84,7 +87,7 @@ $availableFiles = [];
 if (is_dir($formDataDir)) {
     $files = scandir($formDataDir);
     foreach ($files as $file) {
-        if (pathinfo($file, PATHINFO_EXTENSION) === 'js') {
+        if (pathinfo($file, PATHINFO_EXTENSION) === 'json') {
             $basename = pathinfo($file, PATHINFO_FILENAME);
             $availableFiles[] = $basename;
         }

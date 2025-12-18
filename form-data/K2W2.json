@@ -1,0 +1,129 @@
+{
+    "title": "Examenonderlegger - Kerntaak 2 Werkproces 2 (Presenteren)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Kwaliteit-Uitleg",
+        "title": "Kwaliteit van uitleg",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-presentatie-structuur",
+            "label": "De presentatie heeft een duidelijke structuur (inleiding, kern, afsluiting).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-presentatie-structuur",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-hoofdlijnen-functionaliteit",
+            "label": "De belangrijkste functionaliteiten worden benoemd zonder irrelevante details.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-hoofdlijnen-functionaliteit",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-onderbouwing-werkwijze",
+            "label": "Keuzes/werkwijze worden onderbouwd met concrete argumenten (techniek/ontwerp).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-onderbouwing-werkwijze",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Afstemming-Doelgroep",
+        "title": "Afstemming op doelgroep",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-taalgebruik-tempo",
+            "label": "Taalgebruik en tempo zijn aangepast aan het kennisniveau van de toehoorders.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-taalgebruik-tempo",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-visuele-middelen",
+            "label": "Ondersteunende middelen (slides/demo) zijn effectief en visueel overzichtelijk.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-visuele-middelen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-interactie-houding",
+            "label": "Er is sprake van actieve interactie (oogcontact, inspelen op vragen/verwarring).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-interactie-houding",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Beantwoorden-Vragen",
+        "title": "Beantwoorden van vragen",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-vragen-beantwoorden",
+            "label": "Vragen worden aandachtig beluisterd en relevant beantwoord met logische argumenten.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-vragen-beantwoorden",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-professionele-houding",
+            "label": "De houding bij het beantwoorden is professioneel, rustig en zelfverzekerd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-professionele-houding",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }

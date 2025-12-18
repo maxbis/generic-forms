@@ -1,0 +1,118 @@
+{
+  "title": "Examenonderlegger - Kerntaak 1 Werkproces 5 (Verbeteren)",
+  "chapters": [
+    {
+      "id": "Studentgegevens",
+      "title": "Studentgegevens",
+      "fields": [
+        {
+          "type": "text",
+          "id": "Studentennaam",
+          "label": "Studentennaam",
+          "required": true
+        },
+        {
+          "type": "text",
+          "id": "Klas",
+          "label": "Klas",
+          "required": true
+        }
+      ]
+    },
+    {
+      "id": "Analyse",
+      "title": "Analyse",
+      "fields": [
+        {
+          "type": "checklist",
+          "id": "criteria-bronnen-analyse",
+          "label": "Je hebt minimaal 2 verschillende bronnen gebruikt (bijv. logs, feedback, reflectie) voor je analyse.",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-bronnen-analyse",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        },
+        {
+          "type": "checklist",
+          "id": "criteria-prioritering",
+          "label": "Je analyseert en prioritiseert de mogelijke aanpassingen.",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-prioritering",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        },
+        {
+          "type": "checklist",
+          "id": "criteria-tijdsanalyse-totaal",
+          "label": "Je hebt geanalyseerd hoeveel tijd elke aanpassing kost (totaal minimaal 8 uur werk).",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-tijdsanalyse-totaal",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "Verbetervoorstel",
+      "title": "Verbetervoorstel",
+      "fields": [
+        {
+          "type": "checklist",
+          "id": "criteria-concreet-voorstel",
+          "label": "Elk verbetervoorstel is concreet uitgewerkt (het is duidelijk wat er moet gebeuren).",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-concreet-voorstel",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        },
+        {
+          "type": "checklist",
+          "id": "criteria-realistisch-voorstel",
+          "label": "Elk verbetervoorstel is realistisch.",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-realistisch-voorstel",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "Planning-Verbetering",
+      "title": "Planning",
+      "fields": [
+        {
+          "type": "checklist",
+          "id": "criteria-stappenplan-technisch",
+          "label": "Je hebt het voorstel opgesplitst in een (technisch) stappenplan.",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-stappenplan-technisch",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        },
+        {
+          "type": "checklist",
+          "id": "criteria-inschatting-per-taak",
+          "label": "Er is een realistische inschatting gemaakt van de tijd per taak.",
+          "required": true,
+          "dependentField": {
+            "id": "bewijs-inschatting-per-taak",
+            "label": "Hoe en waar heb je dat aangetoond?",
+            "multiline": true
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+    "title": "Examenonderlegger - Kerntaak 2 Werkproces 1 (Voert overleg)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Actieve-Deelname",
+        "title": "Actieve deelname",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-relevant-onderwerp",
+            "label": "Je brengt minstens één relevant onderwerp in dat betrekking heeft op het project, de voortgang of een probleem.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-relevant-onderwerp",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-verduidelijkende-vraag",
+            "label": "Je stelt minimaal één vraag die bijdraagt aan verduidelijking, besluitvorming of verbetering.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-verduidelijkende-vraag",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-reageren-bijdragen",
+            "label": "Je reageert op bijdragen van anderen (bijv. feedback geven of voortbouwen op anderen).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-reageren-bijdragen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-voorbereiding-tonen",
+            "label": "Je toont voorbereiding (bijv. verwijzen naar eerdere punten, eigen werk of doelen).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-voorbereiding-tonen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Afstemmen",
+        "title": "Afstemmen",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-contactmomenten",
+            "label": "Je kunt aantonen dat je 5 verschillende contactmomenten hebt gehad om af te stemmen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-contactmomenten",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-afstemming-voortgang",
+            "label": "Je toont aan dat je ten minste 3 keer inhoudelijk hebt afgestemd over de voortgang.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-afstemming-voortgang",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-afstemming-knelpunt",
+            "label": "Je hebt minimaal 1 maal inhoudelijk afgestemd over een knelpunt.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-afstemming-knelpunt",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-feedback-gevraagd",
+            "label": "Je hebt minimaal 1 maal om feedback gevraagd en de inhoud hiervan vastgelegd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-feedback-gevraagd",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Afspraken-Vastleggen",
+        "title": "Afspraken vastleggen",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-afspraken-voorbeelden",
+            "label": "Er zijn tenminste 3 duidelijke voorbeelden waaruit blijkt dat afspraken concreet zijn vastgelegd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-afspraken-voorbeelden",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-afspraken-details",
+            "label": "Bij de afspraken staat duidelijk vermeld: wat, wie en wanneer.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-afspraken-details",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Afspraken-Nakomen",
+        "title": "Afspraken nakomen",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-nakomen-voorbeelden",
+            "label": "Je kan tenminste 3 voorbeelden geven van afspraken die zijn nagekomen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-nakomen-voorbeelden",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-bevestiging-stageleider",
+            "label": "Jouw stage-leider bevestigt dat afspraken zijn nagekomen (of tijdig is gecommuniceerd).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-bevestiging-stageleider",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }

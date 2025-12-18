@@ -1,0 +1,201 @@
+{
+    "title": "Examenonderlegger - Kerntaak 1 Werkproces 3 (Realisatie)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Gerealiseerde-Functionaliteit",
+        "title": "Gerealiseerde functionaliteit & Kwantiteit",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-uren-geprogrammeerd",
+            "label": "Er is minimaal 40 uur geprogrammeerd (onderbouwd door hoeveelheid code, complexiteit en versiebeheer).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-uren-geprogrammeerd",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-werkende-code",
+            "label": "De code werkt en dit is aangetoond (video en/of draaiende applicatie).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-werkende-code",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Aansluiting-Planning-Ontwerp",
+        "title": "Aansluiting op eisen en wensen",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-gebaseerd-op-ontwerp",
+            "label": "De opgeleverde code is in zijn algemeenheid zichtbaar gebaseerd op de gemaakte planning en het ontwerp.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-gebaseerd-op-ontwerp",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-eisen-verwerkt",
+            "label": "Alle eisen en wensen zijn verwerkt volgens de (eventueel aangepaste) planning.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-eisen-verwerkt",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Kwaliteit-Code",
+        "title": "Kwaliteit van de code",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-naamgeving",
+            "label": "Naamgeving: Code is consistent, variabelen/functies hebben betekenisvolle namen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-naamgeving",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-mappenstructuur",
+            "label": "De code heeft een gangbare, consistente en duidelijke mappenstructuur.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-mappenstructuur",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-dry-commentaar",
+            "label": "Geen onnodig commentaar (alleen ter verduidelijking) en er is geen dubbele code (DRY).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-dry-commentaar",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-modulariteit",
+            "label": "Modulariteit: 80% functies doen één ding (max 60 regels). Bestanden max 400 regels.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-modulariteit",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-robuustheid",
+            "label": "Robuustheid: Fouten worden opgevangen/afgehandeld (try/catch), database constraints zijn aanwezig.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-robuustheid",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-security",
+            "label": "Security: Geen plain text wachtwoorden, bescherming tegen SQL-injection en bijv. CSRF.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-security",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Versiebeheer",
+        "title": "Versiebeheer",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-git-gebruik",
+            "label": "De code staat volledig in GIT versiebeheer.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-git-gebruik",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-git-versies",
+            "label": "Er zijn tenminste 5 versies beschikbaar, verdeeld over de projecttijd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-git-versies",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-git-commits",
+            "label": "Commits zijn logisch opgebouwd en hebben duidelijke beschrijvingen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-git-commits",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-git-koppeling",
+            "label": "Tenminste 5 commits zijn duidelijk te koppelen aan functionaliteiten uit de planning.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-git-koppeling",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }

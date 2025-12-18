@@ -1,0 +1,157 @@
+{
+    "title": "Examenonderlegger - Kerntaak 1 Werkproces 4 (Testen)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Kwaliteit-Testcases",
+        "title": "Kwaliteit Testcases",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-testcase-structuur",
+            "label": "De testcases bevatten een pre-conditie, actie en verwacht resultaat.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-testcase-structuur",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-flow-typen",
+            "label": "Er zijn zowel Happy Flow als Unhappy Flow (foutscenario's) tests uitgewerkt.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-flow-typen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-testdata-randgevallen",
+            "label": "De gekozen testdata is concreet en dekt randgevallen.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-testdata-randgevallen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-reproduceerbaarheid",
+            "label": "Alle tests zijn reproduceerbaar met dezelfde eenduidige uitkomsten.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-reproduceerbaarheid",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Volledigheid-Dekking",
+        "title": "Volledigheid / Dekking",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-test-matrix",
+            "label": "Je maakt een matrix waarbij je een relatie legt tussen test en functionaliteit.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-test-matrix",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-volledig-getest",
+            "label": "Alle functionaliteiten zijn getest.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-volledig-getest",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Uitvoering-Bewijs",
+        "title": "Uitvoering",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-werkelijk-resultaat",
+            "label": "Het werkelijke resultaat is bij elke uitgevoerde test vastgelegd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-werkelijk-resultaat",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-test-bewijslast",
+            "label": "Je toont bewijs van de daadwerkelijke uitvoering (screenshots, logs, database-status).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-test-bewijslast",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Rapportage-Conclusie",
+        "title": "Rapportage & Conclusie",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-bug-registratie",
+            "label": "Testresultaten en gevonden fouten (bugs) zijn duidelijk geregistreerd (omschrijving + ernst).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-bug-registratie",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-eindconclusie",
+            "label": "Het rapport bevat een duidelijke eindconclusie/advies over de softwareversie.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-eindconclusie",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }

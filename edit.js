@@ -297,50 +297,12 @@ function updatePreview() {
 }
 
 function generateFormDataCode() {
-    let code = `// Form data structure\nconst formData = {\n  title: ${JSON.stringify(formData.title)},\n  chapters: [\n`;
-    
-    formData.chapters.forEach((chapter, chapterIndex) => {
-        code += `    {\n      id: ${JSON.stringify(chapter.id)},\n      title: ${JSON.stringify(chapter.title)},\n      fields: [\n`;
-        
-        chapter.fields.forEach((field, fieldIndex) => {
-            code += `        {\n          type: ${JSON.stringify(field.type)},\n          id: ${JSON.stringify(field.id)},\n          label: ${JSON.stringify(field.label)},\n          required: ${field.required || false}`;
-            
-            if (field.type === 'text') {
-                if (field.multiline) {
-                    code += `,\n          multiline: true`;
-                }
-                if (field.placeholder) {
-                    code += `,\n          placeholder: ${JSON.stringify(field.placeholder)}`;
-                }
-            } else if (field.type === 'checklist') {
-                if (field.dependentField) {
-                    code += `,\n          dependentField: {\n            id: ${JSON.stringify(field.dependentField.id)},\n            label: ${JSON.stringify(field.dependentField.label)}`;
-                    if (field.dependentField.multiline) {
-                        code += `,\n            multiline: true`;
-                    }
-                    if (field.dependentField.placeholder) {
-                        code += `,\n            placeholder: ${JSON.stringify(field.dependentField.placeholder)}`;
-                    }
-                    code += `\n          }`;
-                }
-            }
-            
-            code += `\n        }`;
-            if (fieldIndex < chapter.fields.length - 1) {
-                code += `,`;
-            }
-            code += `\n`;
-        });
-        
-        code += `      ]\n    }`;
-        if (chapterIndex < formData.chapters.length - 1) {
-            code += `,`;
-        }
-        code += `\n`;
-    });
-    
-    code += `  ]\n};\n`;
-    return code;
+    // Return pretty-printed JSON representation of the current formData
+    const data = {
+        title: formData.title || "Dynamic Form",
+        chapters: formData.chapters || []
+    };
+    return JSON.stringify(data, null, 2);
 }
 
 function loadFormData() {
@@ -362,33 +324,16 @@ function loadFormData() {
 }
 
 function loadFormDataFile(filename) {
-    // Use PHP endpoint to load file
+    // Use PHP endpoint to load JSON file
     fetch(`edit.php?load=${encodeURIComponent(filename)}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            return response.text();
+            return response.json();
         })
-        .then(text => {
-            // Parse the JavaScript file to extract the formData object
+        .then(loadedData => {
             try {
-                // Remove single-line comments but preserve the structure
-                let cleanedText = text.replace(/\/\/.*$/gm, '').trim();
-                
-                // Find the formData assignment
-                const formDataMatch = cleanedText.match(/const\s+formData\s*=\s*({[\s\S]*});?\s*$/);
-                if (!formDataMatch) {
-                    throw new Error('Could not find formData object in file');
-                }
-                
-                // Extract the object literal
-                const objectLiteral = formDataMatch[1];
-                
-                // Parse it safely by wrapping in a function that returns the object
-                const func = new Function('return ' + objectLiteral);
-                const loadedData = func();
-                
                 if (loadedData && Array.isArray(loadedData.chapters)) {
                     formData = {
                         title: loadedData.title || "Dynamic Form",
@@ -400,7 +345,9 @@ function loadFormDataFile(filename) {
                     const select = document.getElementById('filename-select');
                     const input = document.getElementById('filename-input');
                     const inputGroup = document.getElementById('filename-input-group');
-                    if (select.options.namedItem(filename)) {
+
+                    const option = Array.from(select.options).find(opt => opt.value === filename);
+                    if (option) {
                         select.value = filename;
                         inputGroup.style.display = 'none';
                     } else {
@@ -411,12 +358,13 @@ function loadFormDataFile(filename) {
                     
                     renderChapters();
                     updatePreview();
+                    showStatus(`Loaded ${filename}`, 'success');
                 } else {
-                    showStatus('Could not parse form data. Make sure the file contains a valid formData object with chapters array.', 'error');
+                    showStatus('Could not parse form data. Make sure the file contains a valid JSON object with chapters array.', 'error');
                 }
             } catch (error) {
-                console.error('Error parsing form data:', error);
-                showStatus(`Error parsing form data: ${error.message}`, 'error');
+                console.error('Error processing form data:', error);
+                showStatus(`Error processing form data: ${error.message}`, 'error');
             }
         })
         .catch(error => {
@@ -485,29 +433,17 @@ function showStatus(message, type) {
 }
 
 function previewForm() {
-    // Generate the formData code
-    const code = generateFormDataCode();
-    
-    // Store in localStorage for preview
     try {
-        // Parse the code to get the actual object
-        const cleanedText = code.replace(/\/\/.*$/gm, '').trim();
-        const formDataMatch = cleanedText.match(/const\s+formData\s*=\s*({[\s\S]*});?\s*$/);
-        if (formDataMatch) {
-            const objectLiteral = formDataMatch[1];
-            const func = new Function('return ' + objectLiteral);
-            const previewData = func();
-            
-            // Store in localStorage
-            localStorage.setItem('formPreviewData', JSON.stringify(previewData));
-            
-            // Open preview in new window
-            const previewWindow = window.open('index.html?preview=1', '_blank');
-            if (!previewWindow) {
-                alert('Please allow popups to preview the form');
-            }
-        } else {
-            showStatus('Could not generate preview data', 'error');
+        // Ensure title is up to date
+        formData.title = document.getElementById('form-title').value || "Dynamic Form";
+
+        // Store current formData as JSON for preview
+        localStorage.setItem('formPreviewData', JSON.stringify(formData));
+
+        // Open preview in new window
+        const previewWindow = window.open('index.html?preview=1', '_blank');
+        if (!previewWindow) {
+            alert('Please allow popups to preview the form');
         }
     } catch (error) {
         console.error('Error generating preview:', error);

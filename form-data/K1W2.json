@@ -1,0 +1,151 @@
+{
+    "title": "Examenonderlegger - Kerntaak 1 Werkproces 2 (Ontwerp)",
+    "chapters": [
+      {
+        "id": "Studentgegevens",
+        "title": "Studentgegevens",
+        "fields": [
+          {
+            "type": "text",
+            "id": "Studentennaam",
+            "label": "Studentennaam",
+            "required": true
+          },
+          {
+            "type": "text",
+            "id": "Klas",
+            "label": "Klas",
+            "required": true
+          }
+        ]
+      },
+      {
+        "id": "Vertaling-Eisen-Ontwerp",
+        "title": "Vertaling eisen naar ontwerp",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-vertaling-eisen",
+            "label": "Alle (minimaal 12) functionele eisen uit de planning zijn vertaald naar het ontwerp.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-vertaling-eisen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-gui-schetsen",
+            "label": "GUI functionaliteiten hebben schetsen/wireframes of een eenduidige beschrijving en zijn testbaar.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-gui-schetsen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-functionele-beschrijving",
+            "label": "Elke functionele beschrijving bevat: doel, invoer, uitvoer en foutafhandeling.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-functionele-beschrijving",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-flow-scenarios",
+            "label": "Indien van toepassing zijn stappen (flow) en alternatieve scenario's beschreven.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-flow-scenarios",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-technische-uitwerking",
+            "label": "Technische eisen zijn concreet gemaakt (bijv. volledig ERD) en zijn onderbouwd.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-technische-uitwerking",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Schematechnieken",
+        "title": "Schematechnieken",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-relevante-schemas",
+            "label": "Er zijn minimaal 2 relevante, verschillende schematechnieken gebruikt (bijv. ERD, Flow diagram).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-relevante-schemas",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-juiste-toepassing",
+            "label": "De schematechnieken zijn helemaal juist toegepast.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-juiste-toepassing",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      },
+      {
+        "id": "Onderbouwing-Keuzes",
+        "title": "Onderbouwing en keuzes",
+        "fields": [
+          {
+            "type": "checklist",
+            "id": "criteria-ontwerpkeuzes-onderbouwd",
+            "label": "Ontwerpkeuzes zijn onderbouwd (waarom is hiervoor gekozen?).",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-ontwerpkeuzes-onderbouwd",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-alternatieve-oplossingen",
+            "label": "Bij tenminste 3 ontwerpkeuzes zijn minstens één of meer alternatieve oplossingen overwogen en beschreven.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-alternatieve-oplossingen",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          },
+          {
+            "type": "checklist",
+            "id": "criteria-security-privacy",
+            "label": "Er is beschreven welke keuzes er ten aanzien van security of privacy (AVG) zijn gemaakt.",
+            "required": true,
+            "dependentField": {
+              "id": "bewijs-security-privacy",
+              "label": "Hoe en waar heb je dat aangetoond?",
+              "multiline": true
+            }
+          }
+        ]
+      }
+    ]
+  }
