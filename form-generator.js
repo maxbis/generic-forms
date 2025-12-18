@@ -393,44 +393,44 @@ class FormGenerator {
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
                 background: var(--background);
                 color: var(--text-primary);
-                line-height: 1.6;
-                padding: 2rem 1rem;
+                line-height: 1.4;
+                padding: 1.5rem 1rem;
             }
 
             .document-container {
                 background: var(--surface);
                 border-radius: var(--radius);
                 box-shadow: var(--shadow-lg);
-                padding: 2.5rem;
-                max-width: 210mm;
+                padding: 1.75rem 2rem;
+                max-width: 1100px;
                 margin: 0 auto;
             }
 
             .document-header {
-                border-bottom: 3px solid var(--primary-color);
-                padding-bottom: 1.5rem;
-                margin-bottom: 2rem;
+                border-bottom: 2px solid var(--primary-color);
+                padding-bottom: 1rem;
+                margin-bottom: 1.25rem;
             }
 
             .document-title {
-                font-size: 2rem;
+                font-size: 1.75rem;
                 font-weight: 700;
                 color: var(--primary-color);
-                margin: 0 0 0.5rem 0;
+                margin: 0 0 0.25rem 0;
             }
 
             .document-date {
                 color: var(--text-secondary);
-                font-size: 1rem;
+                font-size: 0.9rem;
                 margin: 0;
             }
 
             .document-content {
-                margin-bottom: 2rem;
+                margin-bottom: 1.5rem;
             }
 
             .document-section {
-                margin-bottom: 2.5rem;
+                margin-bottom: 1.75rem;
                 page-break-inside: avoid;
             }
 
@@ -439,18 +439,18 @@ class FormGenerator {
             }
 
             .section-title {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: 600;
                 color: var(--primary-color);
-                margin: 0 0 1.5rem 0;
-                padding-bottom: 0.75rem;
-                border-bottom: 2px solid var(--border-color);
+                margin: 0 0 0.75rem 0;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid var(--border-color);
             }
 
             .document-table {
                 width: 100%;
                 border-collapse: collapse;
-                margin-bottom: 1rem;
+                margin-bottom: 0.5rem;
             }
 
             .document-row {
@@ -463,21 +463,39 @@ class FormGenerator {
             }
 
             .dependent-row {
-                background: #fafafa;
+                background: #f5f5f5;
             }
 
             .column-label {
-                width: 40%;
-                padding: 1rem;
+                width: 38%;
+                padding: 0.5rem 0.75rem;
                 font-weight: 600;
                 color: var(--text-primary);
                 vertical-align: top;
                 border-right: 1px solid var(--border-color);
             }
 
+            .dependent-row .column-label {
+                position: relative;
+                padding-left: 2rem;
+                font-weight: 500;
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+            }
+
+            .dependent-row .column-label::before {
+                content: '↳';
+                position: absolute;
+                left: 0.75rem;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--text-secondary);
+                font-size: 0.9rem;
+            }
+
             .column-value {
-                width: 60%;
-                padding: 1rem;
+                width: 62%;
+                padding: 0.5rem 0.75rem;
                 color: var(--text-primary);
                 vertical-align: top;
                 white-space: pre-wrap;
@@ -485,15 +503,15 @@ class FormGenerator {
             }
 
             .document-actions {
-                margin-top: 2rem;
-                padding-top: 1.5rem;
+                margin-top: 1.25rem;
+                padding-top: 1rem;
                 border-top: 1px solid var(--border-color);
                 text-align: center;
             }
 
             .btn {
-                padding: 0.75rem 1.5rem;
-                font-size: 1rem;
+                padding: 0.5rem 1.25rem;
+                font-size: 0.95rem;
                 font-weight: 500;
                 border: none;
                 border-radius: var(--radius);
