@@ -115,7 +115,7 @@
           {
             "type": "checklist",
             "id": "criteria-modulariteit",
-            "label": "Modulariteit: 80% functies doen één ding (max 60 regels). Bestanden max 400 regels.",
+            "label": "De code is modulair opgezet. Je gebruikt functies met één duidelijke taak. Bestanden bevatten maximaal 400 regels.",
             "required": true,
             "dependentField": {
               "id": "bewijs-modulariteit",
